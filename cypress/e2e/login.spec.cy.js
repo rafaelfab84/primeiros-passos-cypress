@@ -14,7 +14,7 @@ describe('Orange HRM Tests', () => {
     cy.get(selectorsList.passwordField).type('admin123')
     cy.get(selectorsList.loginButton).click()
     cy.location('pathname').should('equal', '/web/index.php/dashboard/index')
-    cy.get(selectorsList.sectionTitleTopBar).contains('dashboard')
+    cy.get(selectorsList.sectionTitleTopBar).contains('Dashboard')
   })
 
 it('login - fail', () => {
