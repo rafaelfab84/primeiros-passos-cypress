@@ -3,7 +3,7 @@ describe('Orange HRM Tests', () => {
   const selectorsList = {
     usernameField: "[name='username']",
     passwordField: "[name='password']",
-    loginButton: "[type'sbmit']",
+    loginButton: "[type'submit']",
     sectionTitleTopBar: ".oxd-topbar-header-breadcrumb-module",
     wrongCredentialAlert: "[role='alert']"
   }
@@ -21,7 +21,7 @@ it('login - fail', () => {
     cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
     cy.get(selectorsList.usernameField).type('test')
     cy.get(selectorsList.passwordField).type('admin123')
-    cy.get().click()
-    cy.get()
+    cy.get(selectorsList.loginButton).click()
+    cy.get(selectorsList.wrongCredentialAlert)
   })
 })
