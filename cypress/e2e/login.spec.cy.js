@@ -21,7 +21,7 @@ it('login - fail', () => {
     cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
     cy.get(selectorsList.usernameField).type('test')
     cy.get(selectorsList.passwordField).type('admin123')
-    cy,get.click()
-    cy.get
+    cy,get().click()
+    cy.get()
   })
 })
