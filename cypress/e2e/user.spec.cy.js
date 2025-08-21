@@ -14,7 +14,8 @@ describe('Orange HRM Tests', () => {
     lastNameField: "[name='lastName']",
     genericField: ".oxd-input--active",
     dateField: "[placeholder='yyyy-dd-mm']",
-    submitButton: "[type='submit']"
+    submitButton: "[type='submit']",
+    dropDownButton: ".oxd-select-text-input"
 
 
   }
@@ -33,9 +34,18 @@ describe('Orange HRM Tests', () => {
     cy.get(selectorsList.genericField).eq(5).clear().type(999995)
     //cy.get(selectorsList.genericField).eq(6).clear().type(999995)
     cy.get(selectorsList.genericField).eq(7).clear().type('1984-24-12')
-    //cy.get('oxd-date-wrapper').click()
     cy.get(selectorsList.genericField).eq(8).clear().type('teste Rafa')
-    cy.get(selectorsList.submitButton).eq(0).click()
+
+    cy.get(selectorsList.dropDownButton).eq(0).click()
+    cy.get('.oxd-select-dropdown').contains('Brazilian').click({force: true})
+
+    cy.get(selectorsList.dropDownButton).eq(1).click({force: true})
+    cy.get('.oxd-select-dropdown').contains('Married').click({force: true})
+
+    cy.get(selectorsList.dropDownButton).eq(2).click({force: true})
+    cy.get('.oxd-select-dropdown').contains('B+').click({force: true})
+
+    cy.get(selectorsList.submitButton).eq(0).click({force: true})
     cy.get('body').should('contain', 'Successfully Updated')
 
 
